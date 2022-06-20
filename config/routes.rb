@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'baggages#index'
+  resources :baggages, only: [:index, :new, :create, :show, :destroy] do
+    collection do
+      get 'search'
+    end
+    resources :deliveries, only: [:index, :create]
+  end
+  get 'signup', to: 'users#new'
+  resource :user, only: [:new, :create]
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create' 
+  delete 'logout', to: 'sessions#destroy'
 end

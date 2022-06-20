@@ -1,0 +1,26 @@
+<div class="body">
+  <div class="wrapper">
+
+    <div class="sign-title">
+      <h2>Sign In</h2>
+    </div>
+
+    <%= form_with model: @user, url: login_path, local: true do |f| %>
+
+      <div class="field">
+        <%= f.label :email, 'Email Address', class: "sign-label-name" %><br />
+        <%= f.email_field :email, class: "sign-form-area" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, class: "sign-label-name" %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "sign-form-area" %>
+      </div>
+
+      <div class="send-field">
+        <%= f.submit "Sign In", class: "sign-btn" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

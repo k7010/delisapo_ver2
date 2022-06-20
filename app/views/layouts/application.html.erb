@@ -4,12 +4,42 @@
     <title>DelisapoVer2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <header class="header">
+      <div class="header-area">
+        <div class="header-logo">
+          <%= link_to 'デリサポ', root_path, class: "header-title"%>
+        </div>
+        <div class="header-menu">
+          <% if current_user.present? %>
+            <div class="user-logout">
+              <span class="staff-number"><%= current_user.staff_number %></span>
+              <%= link_to "Logout", logout_path, method: :delete, class: "logout" %>
+            </div>
+          <% else %>
+            <div class="user-sign">
+              <%= link_to "Sign In", login_path, class: "login" %>
+              <%= link_to "Sign Up", new_user_path, class: "sign-up" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <div>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <p>© 2021 Kawasaki</p>
+      </div>
+    </footer>
   </body>
 </html>

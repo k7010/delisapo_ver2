@@ -1,0 +1,66 @@
+<div class="body">
+  <div class="wrapper">
+    <h1>持出入力</h1>
+    <%= form_with model: @baggage, url:baggages_path, local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <div class="taking-field">
+        <%= f.label :address, "住所", class: "taking-label" %><span class="required">必須</span>
+        <%= f.text_field :address, placeholder:"東京都世田谷区三軒茶屋", class: "taking-form-area" %><br>
+      </div>
+      <div class="taking-field">
+        <%= f.label :address, "番地", class: "taking-label" %><span class="required">必須</span>
+        <%= f.text_field :block, placeholder:"1-2-3", class: "taking-form-area" %><br>
+      </div>
+      <div class="taking-field">
+        <%= f.label :address, "マンション・アパート名", class: "taking-label" %><span class="optional">任意</span>
+        <%= f.text_field :building, placeholder:"マンション名", class: "taking-form-area" %><br>
+      </div>
+      <div class="taking-field">
+        <%= f.label :address, "苗字", class: "taking-label" %><span class="required">必須</span>
+        <%= f.text_field :family_name ,placeholder:"鈴木", class: "taking-form-area" %><br>
+      </div>
+      <div class="taking-field">
+        <%= f.label :address, "名前", class: "taking-label" %><span class="required">必須</span>
+        <%= f.text_field :first_name, placeholder:"一郎", class: "taking-form-area" %><br>
+      </div>
+      <h2>配達時間指定<span class="required">必須</span></h2>
+      <div class="time-specification">
+        <div class="time-specification-area">
+          <div class="time-specification-field">
+            <%= f.radio_button :time_specification, '指定無し', checked: true, class: "time-specification-btn" %>
+            <%= f.label :time_specification, "指定無し", value: '指定無し', class: "taking-label" %>
+          </div>
+          <div class="time-specification-field">
+            <%= f.radio_button :time_specification, '午前中',  class: "time-specification-btn" %>
+            <%= f.label :time_specification, "午前中", value: '午前中', class: "taking-label" %>
+          </div>
+          <div class="time-specification-field">
+            <%= f.radio_button :time_specification, '12時〜14時', class: "time-specification-btn" %>
+            <%= f.label :time_specification, "12時〜14時", value: '12時〜14時', class: "taking-label" %>
+          </div>
+        </div>
+        <div class="time-specification-area">
+          <div class="time-specification-field">
+            <%= f.radio_button :time_specification, '14時〜16時', class: "time-specification-btn" %>
+            <%= f.label :time_specification, "14時〜16時", value: '14時〜16時', class: "taking-label" %>
+          </div>
+          <div class="time-specification-field">
+            <%= f.radio_button :time_specification, '16時〜18時', class: "time-specification-btn" %>
+            <%= f.label :time_specification, "16時〜18時", value: '16時〜18時', class: "taking-label" %>
+          </div>
+          <div class="time-specification-field">
+            <%= f.radio_button :time_specification, '18時〜21時', class: "time-specification-btn" %>
+            <%= f.label :time_specification, "18時〜21時", value: '18時〜21時', class: "taking-label" %>
+          </div>
+        </div>
+      </div>
+      <% if current_user.present? %>
+        <div class="send-field">
+          <%= f.submit "登録", class: "send-btn" %>
+        </div>
+      <% else %><br>
+        <p>ログインするとデータが送信できます</p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

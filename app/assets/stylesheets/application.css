@@ -13,3 +13,470 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  box-sizing: border-box;
+}
+
+.sign-exception {
+  color: #757575;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-area {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  margin: auto 20px;
+  width: 450px;
+}
+
+.header-title {
+  font-family: "Nico Moji";
+  text-decoration: none;
+  font-size: 55px;
+  color: #ff8c00;
+}
+
+.logout, .login, .sign-up {
+  color: #ff8c00;
+  border: 2px solid #ff8c00;
+  border-radius: 3px;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.logout:hover, .login:hover, .sign-up:hover{
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
+  color: white;
+}
+
+.image-size {
+  width: 350px;
+  height: 350px;
+}
+
+footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+/************    ログイン関連 ここから    *************/
+
+.before-login {
+  margin: 30px 0 60px 0;
+}
+
+.before-login p {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+span.staff-number {
+  color: #757575;
+  font-size: 23px;
+}
+
+.sign-title {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-title h2 {
+  font-size: 30px;
+  color: #757575;
+}
+
+.field {
+  margin: 20px 0;
+}
+
+.sign-label-name {
+  color: #757575;
+}
+
+.sign-form-area {
+  outline: none;
+  border: none;
+  width: 300px;
+  height: 50px;
+  padding-left: 10px;
+}
+
+.sign-form-area:focus {
+  border: 2px solid darkgray;
+}
+
+.sign-btn {
+  margin: 20px auto;
+  width: 150px;
+  height: 50px;
+  color: white;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
+  border: 1px solid #ff8c00;
+  border-radius: 5px;
+  font-size: 23px
+}
+
+.sign-btn:hover {
+  color: #ff8c00;
+  background: white;
+  border: 2px solid #ff8c00;
+}
+
+/************    トップページ ここから    *************/
+
+.body {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  padding: 20px 40px;
+}
+
+.baggage-registration {
+  display: flex;
+  justify-content: center;
+  width: 420px;
+}
+
+.baggage-registration-btn {
+  border: 2px solid #ff8c00;
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 20px 0 10px 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 33px;
+  font-weight: bold;
+  color: #ff8c00;
+}
+
+.baggage-registration-btn:hover {
+  color: white;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
+}
+
+h1 {
+  margin: 30px 0 0 0;
+  height: 50px;
+  font-size: 32px;
+  color: white;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.70) 100%);
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.taking-display-area {
+  height: 350px;
+  overflow: auto;
+  background-color: white;
+  margin-bottom: 45px;
+}
+
+.taking-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  width: 100%;
+}
+
+.baggage-lists {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  position: relative;
+  
+}
+
+.baggage-list p {
+  padding: 7px;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.70) 100%);
+  color: white;
+  border-radius: 3px;
+  margin-top: 0;
+}
+
+.baggage-list {
+  padding: 10px 10px 0 10px;
+  margin-bottom: 10px;
+  
+  font-size: 20px;
+}
+
+.baggage-lists:hover {
+  opacity: 0.5;
+}
+
+.baggage-time-specification {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+.baggage-span {
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.not-logged {
+  font-size: 20px;
+  padding: 10px;
+}
+
+
+.search-area {
+  margin: 10px 0 60px 0;
+}
+
+.search-field {
+  margin-bottom: 10px;
+}
+
+.form-area {
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid lightgray;
+}
+
+.form-area:focus {
+  border: 2px solid darkgray;
+}
+
+.submit-field {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  width: 250px;
+  height: 50px;
+  margin-top: 10px;
+  background: white;
+  border: 2px solid #ff8c00;
+  border-radius: 25px;
+  font-size: 23px;
+  color: #ff8c00;
+}
+
+.submit-btn:hover {
+  color: white;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
+}
+
+/************    トップページ ここまで     *************/
+/************    詳細ページ ここから     *************/
+
+.baggage-detail-name {
+  font-size: 25px;
+  line-height: 110%;
+  margin: 40px auto;
+}
+
+.detail-time-specification {
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.detail-span {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.delivery-selection {
+  margin: 30px auto;
+}
+
+
+.delivery-field {
+  display: flex;
+  justify-content: center;
+}
+
+.delivery-radio-btn {
+  width: 25px;
+  height: 50px;
+  margin: 0 5px 0 20px;
+}
+
+.delivery-label {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+
+.send-field {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.send-btn {
+  margin: 20px auto;
+  width: 250px;
+  height: 50px;
+  color: white;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
+  border: 2px solid #ff8c00;
+  border-radius: 25px;
+  font-size: 23px;
+}
+
+.send-btn:hover {
+  color: #ff8c00;
+  background: white;
+}
+
+.baggage-destroy {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding-top: 40px;
+  border-top: 1px solid lightgray;
+}
+
+.destroy-btn {
+  width: 250px;
+  height: 50px;
+  margin-top: 10px;
+  background: white;
+  border: 2px solid #ff8c00;
+  border-radius: 25px;
+  font-size: 23px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff8c00;
+}
+
+.destroy-btn:hover {
+  color: white;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
+}
+
+.header, .result-text {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+/************    詳細ページ ここまで     *************/
+/************    検索結果ページ ここから     *************/
+
+.search-wrapper {
+  width: 420px;
+  margin: 0 0 50px 0;
+}
+
+.search-result-area {
+  height: 400px;
+  overflow: auto;
+  background-color: white;
+}
+
+.search-result-name {
+  line-height: 120%;
+  font-size: 23px;
+  margin: 20px auto;
+  padding: 0 0 20px 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.result-time {
+  padding: 0 20px;
+  font-size: 27px;
+}
+
+::placeholder {
+  color: darkgray;
+  font-weight: lighter;
+}
+
+/************    検索結果ページ ここまで     *************/
+/************    持出登録 ここから     *************/
+.taking-field{
+  margin: 10px auto;
+}
+
+.taking-form-area {
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid lightgray;
+}
+
+.taking-form-area:focus {
+  border: 2px solid darkgray;
+}
+
+.taking-label {
+  font-size: 20px;
+  
+}
+
+h2 {
+  font-size: 23px;
+  margin-top: 40px;
+}
+
+.time-specification {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.time-specification-area {
+  margin: 0 20px 0 10px;
+}
+
+.time-specification-field {
+  margin-bottom: 10px;
+}
+
+.time-specification-btn {
+  width: 20px;
+  height: 18px;
+  
+}
+
+.required {
+  background-color: red;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.optional {
+  margin-left: 10px;
+}

@@ -1,0 +1,47 @@
+<div class="body">
+  <div class="wrapper">
+
+      <div class="baggage-registration">
+        <%= link_to "持 出 登 録", new_baggage_path, class: "baggage-registration-btn" %>
+      </div>
+      
+      <h1>持出一覧</h1>
+    <% if current_user.present? %>
+      <%# 一覧表示 %>
+      <div class="taking-display-area">
+        <% @baggages.each do |baggage| %>
+          <%= link_to baggage_path(baggage.id), method: :get, class: "taking-link" do %>
+            <div class="baggage-lists">
+              <div class="baggage-list">
+                <%= render partial: "baggage", locals: { baggage: baggage }, class: "b" %>
+              </div>
+              <div class="baggage-list">
+                <% @results.where(id: baggage.id).each do %>
+                  <p>完了</p>
+                <% end %><br>
+                <div class="baggage-time-specification">
+                <%= baggage.time_specification %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+          
+
+    <% else %>
+      <%# ログアウト状態は以下を表示 %>
+      <div class="taking-display-area">
+          <div class="baggage-lists">
+            <span class="not-logged">東京都新宿区歌舞伎町1-1<br><br>
+            サンプル 太郎<span>
+          </div>
+      </div>
+      
+    <% end %>
+      <h1>配達実績を調べる</h1>
+      <div class="search-area">
+        <%= render 'search_form', url: baggages_path, q: @q %>
+      </div> 
+  </div>
+</div>
