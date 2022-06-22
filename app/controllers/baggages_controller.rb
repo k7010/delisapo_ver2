@@ -2,12 +2,12 @@ class BaggagesController < ApplicationController
   before_action :ensure_current_user, only: [:show]
 
   def index
-    if current_user.present?
-      @baggages = Baggage.where(user_id: current_user.id).includes(:user)
-    else
-      @baggages = Baggage.includes(:user)
-    end
-    @results = Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
+    @baggages = if current_user.present?
+                  Baggage.where(user_id: current_user.id).includes(:user)
+                else
+                  Baggage.includes(:user)
+                end
+    @results = Baggage.joins(:deliveries).select('baggages.*, deliveries.*').where("delivery_result = '配達済み'")
   end
 
   def new
@@ -37,21 +37,19 @@ class BaggagesController < ApplicationController
   end
 
   def search
-    @q = Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'").ransack(params[:q])
-    @baggages = @q.result.order(id: "DESC")
+    @q = Baggage.joins(:deliveries).select('baggages.*, deliveries.*').where("delivery_result = '配達済み'").ransack(params[:q])
+    @baggages = @q.result.order(id: 'DESC')
   end
-
 
   private
 
   def baggage_params
-    params.require(:baggage).permit(:address, :building, :block, :family_name, :first_name, :time_specification).merge(user_id: current_user.id)
+    params.require(:baggage).permit(:address, :building, :block, :family_name, :first_name,
+                                    :time_specification).merge(user_id: current_user.id)
   end
 
   def ensure_current_user
     @baggage = Baggage.find(params[:id])
-    unless @baggage.user.id == current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path unless @baggage.user.id == current_user.id
   end
 end

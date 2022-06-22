@@ -66,10 +66,9 @@
 ## テスト
 - RSpec
   - 単体テスト
-  - 結合テスト
 
 ## URL
-https://delisapo-app.herokuapp.com/
+https://delisapo-ver2-app.herokuapp.com/
 
 ## 利用方法
 「配達実績を調べる」の検索フォームで、配達完了実績が閲覧できます。（他ユーザーが登録した配達完了データも含む）  

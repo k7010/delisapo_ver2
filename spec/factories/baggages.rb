@@ -5,7 +5,7 @@ FactoryBot.define do
     building            { 'マンション名' }
     family_name         { Faker::Name.last_name }
     first_name          { Faker::Name.first_name }
-    time_specification  { '午前中'}
+    time_specification  { '午前中' }
     association :user
   end
 end

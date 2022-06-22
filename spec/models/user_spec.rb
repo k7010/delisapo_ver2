@@ -20,14 +20,14 @@ RSpec.describe User, type: :model do
       it 'staff_numberが数値以外では登録できない' do
         @user.staff_number = 'あいうえお'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Staff number is not a number")
+        expect(@user.errors.full_messages).to include('Staff number is not a number')
       end
       it 'staff_numberが重複したら登録できない' do
         @user.save
         another_user = FactoryBot.build(:user)
         another_user.staff_number = @user.staff_number
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Staff number has already been taken")
+        expect(another_user.errors.full_messages).to include('Staff number has already been taken')
       end
       it 'emailが空では登録できない' do
         @user.email = ''
@@ -39,7 +39,7 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Email has already been taken")
+        expect(another_user.errors.full_messages).to include('Email has already been taken')
       end
       it 'passwordが空では登録できない' do
         @user.password_digest = ''
