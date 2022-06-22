@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :already_login?, except: :destroy
   def new
   end
 

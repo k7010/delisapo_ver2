@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :already_login?, only: [:new, :create]
   def new
     @user = User.new
   end
